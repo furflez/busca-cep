@@ -9,8 +9,8 @@
     "strict": true,                           
     "baseUrl": "./",                       
     "paths": {
-        "@models": [".src/models/*"],
-        "@controllers": [".src/controllers/*"]
+        "@entities": [".src/entities/*"],
+        "@routes": [".src/routes/*"]
     },                           
    "typeRoots": [
         "./node_modules/@types",
