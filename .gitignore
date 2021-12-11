@@ -1,3 +1,4 @@
 node_modules
 .husky/_
 Desafio_Técnico.md
+src/entities/index.ts

@@ -1,0 +1,38 @@
+{
+    "mockAddressesJson":[
+    {
+        "zipcode": "88501440",
+        "street": "Rua bola 1",
+        "neighborhood": "Centro",
+        "city": "Lages",
+        "state": "Santa Catarina"
+    },
+    {
+        "zipcode": "88501440",
+        "street": "Rua bola 2",
+        "neighborhood": "Centro",
+        "city": "Lages",
+        "state": "Santa Catarina"
+    },
+    {
+        "zipcode": "88501440",
+        "street": "Rua bola 3",
+        "neighborhood": "Centro",
+        "city": "Lages",
+        "state": "Santa Catarina"
+    },
+    {
+        "zipcode": "88509560",
+        "street": "Rua Quadrado 1",
+        "neighborhood": "Coral",
+        "city": "Lages",
+        "state": "Santa Catarina"
+    },
+    {
+        "zipcode": "88509560",
+        "street": "Rua Quadrado 2",
+        "neighborhood": "Coral",
+        "city": "Lages",
+        "state": "Santa Catarina"
+    }
+]}

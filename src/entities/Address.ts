@@ -1,4 +1,6 @@
 export class Address {
+  public zipcode: string;
+
   public street: string;
 
   public neighborhood: string;

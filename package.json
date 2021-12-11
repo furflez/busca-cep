@@ -5,8 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest",
-        "start": "tsnd --transpile-only --respawn --ignore-watch node_modules src/server.ts",
-        "dev": "ts-node-dev -r tsconfig-path --respawn --transpileOnly --ignore-watch node_modules --no-notify src/server.ts ",
+        "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore-watch node_modules --no-notify src/server.ts ",
         "prepare": "husky install"
     },
     "author": "Felipe Amaral (furflez)",
@@ -47,6 +46,7 @@
         }
     },
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "express-validator": "^6.13.0"
     }
 }

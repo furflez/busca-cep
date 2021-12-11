@@ -19,6 +19,10 @@
         "import/no-extraneous-dependencies": "off",
         "import/prefer-default-export": "off",
         "import/extensions": "off",
-        "import/no-unresolved": "off"
+        "import/no-unresolved": "off",
+        "no-useless-constructor": "off",
+        "no-unused-vars": "off",
+        "no-empty-function":"off",
+        "max-len": "off"
     }
 }
