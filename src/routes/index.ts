@@ -1,23 +1,13 @@
-import { findAddressByZipcodeController } from '@usecases/FindAddressByZipcode';
 import { generateTokenController } from '@usecases/GenerateToken';
-import { body, header, param } from 'express-validator';
+import { body } from 'express-validator';
 import { Router, Request } from 'express';
-import { ValidateParams } from '../middlewares/ValidateParams';
+import { ValidateParams } from '@middlewares/ValidateParams';
+import { tokenValidationController } from '@usecases/TokenValidation';
+import { tokenizedRoutes } from './tokenizedRoutes';
 
 const router = Router();
 
 const validateParams = new ValidateParams();
-
-router.get(
-  '/address/:zipcode',
-  header('token').isJWT().withMessage('header token must be a valid json web token'),
-  param('zipcode')
-    .isNumeric().withMessage('zipcode param must be only numbers')
-    .isLength({ min: 8, max: 8 })
-    .withMessage('zipcode param must have 8 digits long'),
-  (request:Request, response, next) => validateParams.handle(request, response, next),
-  (request, response) => findAddressByZipcodeController.handle(request, response),
-);
 
 router.post(
   '/authentication',
@@ -26,5 +16,7 @@ router.post(
   (request:Request, response, next) => validateParams.handle(request, response, next),
   (request, response) => generateTokenController.handle(request, response),
 );
+
+router.use('/', (request, response, next) => tokenValidationController.handle(request, response, next), tokenizedRoutes);
 
 export { router };

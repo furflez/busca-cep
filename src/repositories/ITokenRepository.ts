@@ -3,4 +3,6 @@ import { User } from '@entities/User';
 
 export interface ITokenRepository {
   generateToken(userId:string): Promise<string>;
+
+  validateToken(token:string): Promise<Boolean>;
 }
