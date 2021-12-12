@@ -9,7 +9,7 @@ export class FindAddressByZipcodeController {
     try {
       const address = await this.findAddressByZipcodeUseCase.execute({ zipcode });
 
-      return response.status(200).send(address);
+      return response.status(200).json(address);
     } catch (error:any) {
       return response.status(400).json({
         message: error.message || 'Unexpected error.',

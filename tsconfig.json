@@ -14,6 +14,7 @@
         "@repositories/*": ["./repositories/*"],
         "@usecases/*": ["./usecases/*"],
         "@mocks/*": ["./mocks/*"],
+        "@middlewares/*": ["./middlewares/*"]
     },                           
    "typeRoots": [
         "./node_modules/@types",
