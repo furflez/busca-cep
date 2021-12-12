@@ -18,4 +18,18 @@ tokenizedRoutes.get(
   (request, response) => findAddressByZipcodeController.handle(request, response),
 );
 
+tokenizedRoutes.get(
+  '/healthcheck',
+  (_request, response) => {
+    response.status(200).json(
+      {
+        msg: 'Ok',
+        uptime: process.uptime(),
+        startedAt: new Date(Date.now() - process.uptime() * 1000),
+        date: new Date(),
+      },
+    );
+  },
+);
+
 export { tokenizedRoutes };
