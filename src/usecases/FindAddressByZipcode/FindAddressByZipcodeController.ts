@@ -12,7 +12,7 @@ export class FindAddressByZipcodeController {
       return response.status(200).json(address);
     } catch (error:any) {
       return response.status(400).json({
-        message: error.message || 'Unexpected error.',
+        message: error.msg || 'Unexpected error.',
       });
     }
   }

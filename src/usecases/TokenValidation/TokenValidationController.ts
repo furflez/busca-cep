@@ -6,22 +6,33 @@ export class TokenValidationController {
 
   async handle(request: Request, response: Response, next: NextFunction) {
     const { token } = request.headers;
-
-    if (typeof token === 'string') {
-      const valid = await this.tokenValidationUseCase.execute({ token });
-      if (valid) {
-        return next();
+    try {
+      if (typeof token === 'string') {
+        const valid = await this.tokenValidationUseCase.execute({ token });
+        if (valid) {
+          return next();
+        }
       }
-    }
 
-    response.status(401).json(
-      {
-        errors: [
-          {
-            msg: 'not authorized',
-          },
-        ],
-      },
-    );
+      return response.status(401).json(
+        {
+          errors: [
+            {
+              msg: 'not authorized',
+            },
+          ],
+        },
+      );
+    } catch (error:any) {
+      return response.status(401).json(
+        {
+          errors: [
+            {
+              msg: error.message || 'Unexpected error.',
+            },
+          ],
+        },
+      );
+    }
   }
 }

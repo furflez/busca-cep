@@ -3,7 +3,7 @@ import { User } from '@entities/User';
 import { GenerateTokenUseCase } from './GenerateTokenUseCase';
 
 export class GenerateTokenController {
-  constructor(private generateTokenUseCase: GenerateTokenUseCase) {}
+  constructor(private generateTokenUseCase: GenerateTokenUseCase) { }
 
   async handle(request: Request, response: Response): Promise<Response> {
     const { email, password } = request.body;
@@ -14,9 +14,13 @@ export class GenerateTokenController {
       const token = await this.generateTokenUseCase.execute(user);
 
       return response.status(200).json({ token });
-    } catch (error:any) {
+    } catch (error: any) {
       return response.status(400).json({
-        message: error.message || 'Unexpected error.',
+        errors: [
+          {
+            msg: error.msg || 'Unexpected error.',
+          },
+        ],
       });
     }
   }
