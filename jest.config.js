@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-const { pathsToModuleNameMapper } = require('ts-jest/utils');
+const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./tsconfig.json');
 /*
  * For a detailed explanation regarding each configuration property, visit:
