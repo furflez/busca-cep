@@ -13,7 +13,7 @@ tokenizedRoutes.get(
   param('zipcode')
     .isNumeric().withMessage('zipcode param must be only numbers')
     .isLength({ min: 8, max: 8 })
-    .withMessage('zipcode param must have 8 digits long'),
+    .withMessage('zipcode param must have 8 numeric digits'),
   (request:Request, response, next) => validateParams.handle(request, response, next),
   (request, response) => findAddressByZipcodeController.handle(request, response),
 );

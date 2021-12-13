@@ -8,21 +8,21 @@
         "state": "Santa Catarina"
     },
     {
-        "zipcode": "88501440",
+        "zipcode": "88000000",
         "street": "Rua bola 2",
         "neighborhood": "Centro",
         "city": "Lages",
         "state": "Santa Catarina"
     },
     {
-        "zipcode": "88501440",
+        "zipcode": "88500000",
         "street": "Rua bola 3",
         "neighborhood": "Centro",
         "city": "Lages",
         "state": "Santa Catarina"
     },
     {
-        "zipcode": "88509560",
+        "zipcode": "88509561",
         "street": "Rua Quadrado 1",
         "neighborhood": "Coral",
         "city": "Lages",
@@ -31,6 +31,13 @@
     {
         "zipcode": "88509560",
         "street": "Rua Quadrado 2",
+        "neighborhood": "Coral",
+        "city": "Lages",
+        "state": "Santa Catarina"
+    },
+    {
+        "zipcode": "88509000",
+        "street": "Rua Quadrado 3",
         "neighborhood": "Coral",
         "city": "Lages",
         "state": "Santa Catarina"
