@@ -1,5 +1,4 @@
 import { MockTokenRepository } from '@repositories/implementation/MockTokenRepository';
-import { GenerateTokenController } from './GenerateTokenController';
 import { GenerateTokenUseCase } from './GenerateTokenUseCase';
 
 describe('GenerateToken test functions', () => {
