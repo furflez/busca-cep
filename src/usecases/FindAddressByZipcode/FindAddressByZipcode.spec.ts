@@ -34,6 +34,18 @@ describe('FindAddressByZipcode test functions', () => {
     expect(thrownError).toEqual(expectedError);
   });
 
+  it('Should return Invalid zipcode with more than 8 digits zipcode', async () => {
+    const zipcode = '11111222333222';
+    const expectedError = new ResponseError('Invalid zipcode.');
+    let thrownError;
+    try {
+      await findAddressByZipcodeUseCase.execute({ zipcode });
+    } catch (error) {
+      thrownError = error;
+    }
+    expect(thrownError).toEqual(expectedError);
+  });
+
   it('Should return "Rua bola 3" in street field', async () => {
     const zipcode = '88599999';
     const address = await findAddressByZipcodeUseCase.execute({ zipcode });
