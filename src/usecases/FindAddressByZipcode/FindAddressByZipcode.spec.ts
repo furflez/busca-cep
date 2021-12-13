@@ -4,11 +4,11 @@ import { FindAddressByZipcodeController } from '@usecases/FindAddressByZipcode/F
 import { ResponseError } from '../../errors/ResponseError';
 import { FindAddressByZipcodeUseCase } from './FindAddressByZipcodeUseCase';
 
-describe('FindAddressByZipcode test functions', () => {
+describe('FindAddressByZipcode', () => {
   const mockAddressRepository = new MockAddressRepository();
   const findAddressByZipcodeUseCase = new FindAddressByZipcodeUseCase(mockAddressRepository);
 
-  it('Should return a valid address object', async () => {
+  it('should return a valid address object when passing a valid zipcode to FindAddressByZipcodeUseCase.execute()', async () => {
     const zipcode = '88501440';
 
     expect(await findAddressByZipcodeUseCase.execute({ zipcode })).toStrictEqual(
@@ -22,7 +22,7 @@ describe('FindAddressByZipcode test functions', () => {
     );
   });
 
-  it('Should return Invalid zipcode', async () => {
+  it('should return Invalid zipcode when passing a invalid zipcode to FindAddressByZipcodeUseCase.execute()', async () => {
     const zipcode = '11111222';
     const expectedError = new ResponseError('Invalid zipcode.');
     let thrownError;
@@ -34,7 +34,7 @@ describe('FindAddressByZipcode test functions', () => {
     expect(thrownError).toEqual(expectedError);
   });
 
-  it('Should return Invalid zipcode with more than 8 digits zipcode', async () => {
+  it('should return Invalid zipcode with more than 8 digits in FindAddressByZipcodeUseCase.execute()', async () => {
     const zipcode = '11111222333222';
     const expectedError = new ResponseError('Invalid zipcode.');
     let thrownError;
@@ -46,7 +46,7 @@ describe('FindAddressByZipcode test functions', () => {
     expect(thrownError).toEqual(expectedError);
   });
 
-  it('Should return "Rua bola 3" in street field', async () => {
+  it('should return "Rua bola 3" in street field when passing to FindAddressByZipcodeUseCase.execute() a not existing zipcode in mock addresses but exists an approximation', async () => {
     const zipcode = '88599999';
     const address = await findAddressByZipcodeUseCase.execute({ zipcode });
     expect(address).toHaveProperty('street', 'Rua bola 3');

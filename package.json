@@ -4,7 +4,7 @@
     "description": "Api com funções de busca de endereço através do cep",
     "main": "index.js",
     "scripts": {
-        "test": "jest",
+        "test": "jest --reporters=default --reporters=jest-junit",
         "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --respawn --ignore-watch node_modules --no-notify src/server.ts ",
         "prepare": "husky install"
     },
@@ -32,6 +32,7 @@
         "eslint-plugin-import": "^2.25.3",
         "husky": "^7.0.4",
         "jest": "^27.4.4",
+        "jest-junit": "^13.0.0",
         "ts-jest": "^27.1.1",
         "ts-node-dev": "^1.1.8",
         "tsconfig-paths": "^3.12.0",
